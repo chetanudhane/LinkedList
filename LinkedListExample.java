@@ -36,9 +36,18 @@ public class LinkedListExample {
 			System.out.println("List is Empty");
 			return 0;
 		}
+		if (head.next == null) {
+			Node temp = head;
+			head = null;
+			return temp.key;
+		}
 		Node temp = head;
-		head = temp.next;
-		return temp.key;
+		while (temp.next.next != null) {
+			temp = temp.next;
+		}
+		int data = temp.next.key;
+		temp.next = null;
+		return data;
 	}
 
 	public void print() {
