@@ -50,6 +50,26 @@ public class LinkedListExample {
 		return data;
 	}
 
+	public boolean search(int elememt) {
+
+		if (head == null) {
+			System.out.println("List is empty");
+			return false;
+		}
+		Node temp = head;
+		boolean isExist = false;
+		while (temp != null) {
+
+			if (temp.key == elememt) {
+				isExist = true;
+				break;
+			}
+			temp = temp.next;
+		}
+		System.out.println(isExist);
+		return isExist;
+	}
+
 	public void print() {
 		Node temp = head;
 		System.out.println("Linked List : ");
