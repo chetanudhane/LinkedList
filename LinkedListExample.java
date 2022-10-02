@@ -31,7 +31,7 @@ public class LinkedListExample {
 		return isAdd;
 	}
 
-	public int pop() {
+	public int pop(int num) {
 		if (head == null) {
 			System.out.println("List is Empty");
 			return 0;
@@ -86,6 +86,29 @@ public class LinkedListExample {
 			}
 			temp = temp.next;
 		}
+	}
+
+	public boolean remove(int element) {
+		if (!search(element)) {
+			System.out.println("Element not in list...");
+			return false;
+		}
+		Node temp = head;
+		Node prev = null;
+		if (temp != null && temp.key == element) {
+			head = temp.next;
+			return true;
+		}
+
+		while (temp != null) {
+			if (temp.key == element) {
+				prev.next = temp.next;
+				return true;
+			}
+			prev = temp;
+			temp = temp.next;
+		}
+		return false;
 	}
 
 	public void print() {
