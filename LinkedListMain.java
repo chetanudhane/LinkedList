@@ -4,9 +4,9 @@ public class LinkedListMain {
 	public static void main(String[] args) {
 
 		LinkedListExample linkedList = new LinkedListExample();
-		linkedList.add(56);
-		linkedList.add(30);
-		linkedList.add(70);
+		linkedList.push(70);
+		linkedList.push(30);
+		linkedList.push(56);
 		linkedList.print();
 	}
 
