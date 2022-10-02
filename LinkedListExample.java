@@ -13,6 +13,12 @@ public class LinkedListExample {
 		}
 	}
 
+	public void push(int data) {
+		Node node = new Node(data);
+		node.next = head;
+		head = node;
+	}
+
 	public boolean append(int data) {
 		boolean isAdd = false;
 
@@ -29,6 +35,28 @@ public class LinkedListExample {
 			isAdd = true;
 		}
 		return isAdd;
+	}
+
+	public void insertAtPosition(int position, int data) {
+		if (position < 1) {
+			System.out.println("Invalid Position");
+			return;
+		}
+
+		if (position == 1) {
+			push(data);
+		} else {
+			Node node = new Node(data);
+			Node temp = head;
+			int count = 2;
+			while (count < position) {
+				temp = temp.next;
+				count++;
+			}
+			Node current = temp.next;
+			temp.next = node;
+			node.next = current;
+		}
 	}
 
 	public void print() {
