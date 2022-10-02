@@ -13,10 +13,22 @@ public class LinkedListExample {
 		}
 	}
 
-	public void push(int data) {
+	public boolean append(int data) {
+		boolean isAdd = false;
+
 		Node node = new Node(data);
-		node.next = head;
-		head = node;
+		if (head == null) {
+			head = node;
+			isAdd = true;
+		} else {
+			Node temp = head;
+			while (temp.next != null) {
+				temp = temp.next;
+			}
+			temp.next = node;
+			isAdd = true;
+		}
+		return isAdd;
 	}
 
 	public void print() {
