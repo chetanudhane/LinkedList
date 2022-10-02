@@ -6,12 +6,10 @@ public class LinkedListMain {
 		LinkedListExample linkedList = new LinkedListExample();
 		linkedList.append(56);
 		linkedList.append(30);
+		linkedList.append(40);
 		linkedList.append(70);
 		linkedList.print();
-		linkedList.search(30);
-		linkedList.insertNextToElement(30, 40);
-		linkedList.print();
-		linkedList.remove(40);
+		linkedList.sort();
 		linkedList.print();
 	}
 
